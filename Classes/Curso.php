@@ -75,13 +75,12 @@ class Curso{
 
     public function verInscripcion():bool{
         
-        if(count($this->alumnosInscriptos) < $this->cupo){        
-             
+        if(count($this->alumnosInscriptos) < $this->cupo){
+
              return true;
         }
         
             return false;
-            
     }
 
 
