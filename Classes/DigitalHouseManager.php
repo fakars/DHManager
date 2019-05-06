@@ -5,13 +5,14 @@ class DigitalHouseManager{
     private $listaCursos = [];
     private $listaProfesores = [];
     private $listaAlumnos = [];
-    
-    
 
+    public function getListaCursos(){
+        return $this->listaCursos;
+    }
     
     public function altaCurso(
         string $nombre, 
-        string $idCurso, 
+        int $idCurso, 
         int $cupo):void{
         
         array_push(
@@ -81,28 +82,27 @@ class DigitalHouseManager{
 
                 if($curso->verInscripcion() && $curso->getIdCurso() == $idCurso){
 
-                    foreach($this->listaAlumnos as $alumno){    
-                        
+                    foreach($this->listaAlumnos as $alumno){
+
                         if($alumno->getIdAlumno() == $idAlumno){
 
                             $curso->setAlumnosInscriptos($alumno);  
-                            $alumno->setCurso($curso->getIdCurso()); 
-
+                            $alumno->setCurso($curso->getIdCurso());
                             echo "El alumno fue inscripto correctamente<br>";
-
                         }
-                            else{
-                                echo "No fue posible inscribir al alumno<br>";
-                            }    
-                    }
-                    
-                }
-                        else{
+                        else {
                             echo "No fue posible inscribir al alumno<br>";
                         }
+                    }
+
+                }
+                else{
+                    echo "No fue posible inscribir al alumno<br>";
+                }
             }
         }
-        public function asignarProfesores(int $idCurso, int $idProfesorTit, $idProfesorAdj):void{
+
+        public function asignarProfesores(int $idCurso, int $idProfesorTit, int $idProfesorAdj):void{
 
             foreach($this->listaCursos as $curso){
 
@@ -124,4 +124,4 @@ class DigitalHouseManager{
 
         }
     }
-}
+ }

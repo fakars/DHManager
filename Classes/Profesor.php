@@ -24,7 +24,7 @@ class Profesor{
         $this->antiguedad = $newAntiguedad;
     }
 
-    public function setCurso(string $newCurso):void{
+    public function setCurso(int $newCurso):void{
         $this->curso = $newCurso;
     }
 

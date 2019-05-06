@@ -44,7 +44,7 @@ $manager->inscribirAlumno(1050, 20002);
 $manager->inscribirAlumno(1055, 20002);
 $manager->inscribirAlumno(1056, 20002);
 
-var_dump($manager);
+var_dump($manager->getListaCursos());
 exit;
 
 

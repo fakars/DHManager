@@ -13,7 +13,7 @@ class Curso{
     
     
 
-    public function __construct(string $nombre, string $idCurso, int $cupo){
+    public function __construct(string $nombre, int $idCurso, int $cupo){
 
         $this->idCurso = $idCurso;
         $this->nombre = $nombre;        
@@ -21,7 +21,7 @@ class Curso{
 
     }
 
-    public function getIdCurso():string{
+    public function getIdCurso():int{
         return $this->idCurso;
     }
 
@@ -70,7 +70,7 @@ class Curso{
     }
 
     public function setAlumnosInscriptos(Alumno $newAlumno){
-        $this->alumnosInscriptos = [$newAlumno];
+        array_push($this->alumnosInscriptos, $newAlumno);
     }
 
     public function verInscripcion():bool{
